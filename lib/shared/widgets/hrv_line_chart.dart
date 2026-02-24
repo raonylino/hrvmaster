@@ -69,7 +69,7 @@ class HrvLineChart extends StatelessWidget {
             dotData: const FlDotData(show: false),
             belowBarData: BarAreaData(
               show: true,
-              color: AppColors.primary.withAlpha(51),
+              color: AppColors.primary.withValues(alpha: 51 / 255),
             ),
           ),
         ],

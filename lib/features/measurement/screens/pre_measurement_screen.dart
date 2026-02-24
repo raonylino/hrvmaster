@@ -132,7 +132,7 @@ class _MethodCard extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(12),
           color: selected
-              ? AppColors.primary.withAlpha(26)
+              ? AppColors.primary.withValues(alpha: 26 / 255)
               : Theme.of(context).cardColor,
         ),
         padding: const EdgeInsets.all(16),

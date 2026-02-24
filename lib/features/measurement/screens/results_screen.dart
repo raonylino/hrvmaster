@@ -136,7 +136,7 @@ class ResultsScreen extends ConsumerWidget {
                   children: [
                     SizedBox(
                       height: 200,
-                      child: PoincareplotWidget(
+                      child: PoincarePlotWidget(
                         rrIntervals: m.rrIntervals,
                         sd1: m.sd1,
                         sd2: m.sd2,

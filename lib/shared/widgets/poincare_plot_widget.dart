@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 import '../../core/theme/app_colors.dart';
 
-class PoincareplotWidget extends StatelessWidget {
+class PoincarePlotWidget extends StatelessWidget {
   final List<double> rrIntervals;
   final double? sd1;
   final double? sd2;
 
-  const PoincareplotWidget({
+  const PoincarePlotWidget({
     super.key,
     required this.rrIntervals,
     this.sd1,
@@ -46,11 +46,11 @@ class _PoincarePainter extends CustomPainter {
     if (rrIntervals.length < 2) return;
 
     final dotPaint = Paint()
-      ..color = AppColors.primary.withAlpha(180)
+      ..color = AppColors.primary.withValues(alpha: 180 / 255)
       ..style = PaintingStyle.fill;
 
     final bgPaint = Paint()
-      ..color = AppColors.secondary.withAlpha(60)
+      ..color = AppColors.secondary.withValues(alpha: 60 / 255)
       ..style = PaintingStyle.fill;
 
     final minRR = rrIntervals.reduce(min);
