@@ -13,7 +13,15 @@ class RemindersScreen extends ConsumerStatefulWidget {
 }
 
 class _RemindersScreenState extends ConsumerState<RemindersScreen> {
-  static const _dayNames = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+  List<String> _getDayNames(AppLocalizations l10n) => [
+        l10n.dayMon,
+        l10n.dayTue,
+        l10n.dayWed,
+        l10n.dayThu,
+        l10n.dayFri,
+        l10n.daySat,
+        l10n.daySun,
+      ];
 
   Future<void> _showAddDialog() async {
     TimeOfDay selectedTime = TimeOfDay.now();
@@ -46,7 +54,7 @@ class _RemindersScreenState extends ConsumerState<RemindersScreen> {
                       final day = i + 1;
                       final selected = selectedDays.contains(day);
                       return FilterChip(
-                        label: Text(_dayNames[i]),
+                        label: Text(_getDayNames(AppLocalizations.of(context))[i]),
                         selected: selected,
                         selectedColor: AppColors.primary,
                         onSelected: (v) {
@@ -104,7 +112,7 @@ class _RemindersScreenState extends ConsumerState<RemindersScreen> {
                   const Icon(Icons.alarm_off,
                       size: 64, color: AppColors.textMuted),
                   const SizedBox(height: 16),
-                  const Text('Nenhum lembrete configurado'),
+                  Text(l10n.noReminders),
                   const SizedBox(height: 16),
                   ElevatedButton.icon(
                     onPressed: _showAddDialog,
@@ -122,7 +130,7 @@ class _RemindersScreenState extends ConsumerState<RemindersScreen> {
             itemBuilder: (context, index) {
               final r = reminders[index];
               final daysStr = r.days
-                  .map((d) => _dayNames[d - 1])
+                  .map((d) => _getDayNames(l10n)[d - 1])
                   .join(', ');
 
               return Card(

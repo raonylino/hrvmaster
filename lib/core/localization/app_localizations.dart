@@ -99,6 +99,36 @@ class AppLocalizations {
   String get device => translate('device');
   String get sendResetEmail => translate('send_reset_email');
   String get resetEmailSent => translate('reset_email_sent');
+  String get noReminders => translate('no_reminders');
+  String get viewAll => translate('view_all');
+  String get placeFingerOnCamera => translate('place_finger_on_camera');
+  String get measuringBluetooth => translate('measuring_bluetooth');
+  String get finishMeasurement => translate('finish_measurement');
+  String get cameraSubtitle => translate('camera_subtitle');
+  String get bluetoothSubtitle => translate('bluetooth_subtitle');
+  String get timeDomain => translate('time_domain');
+  String get poincarePlot => translate('poincare_plot');
+  String get frequencyDomain => translate('frequency_domain');
+  String get hrvMetrics => translate('hrv_metrics');
+  String get deleteTitle => translate('delete_title');
+  String get deleteConfirmation => translate('delete_confirmation');
+  String get calculatingHrv => translate('calculating_hrv');
+  String get dayMon => translate('day_mon');
+  String get dayTue => translate('day_tue');
+  String get dayWed => translate('day_wed');
+  String get dayThu => translate('day_thu');
+  String get dayFri => translate('day_fri');
+  String get daySat => translate('day_sat');
+  String get daySun => translate('day_sun');
+
+  String greeting(String name) =>
+      translate('greeting').replaceAll('{name}', name);
+
+  String waitForRrIntervals(int count) =>
+      translate('wait_for_rr_intervals').replaceAll('{count}', '$count');
+
+  String rrCount(int count) =>
+      translate('rr_count').replaceAll('{count}', '$count');
 }
 
 class _AppLocalizationsDelegate

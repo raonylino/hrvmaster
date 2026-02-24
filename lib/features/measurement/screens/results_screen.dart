@@ -78,7 +78,7 @@ class ResultsScreen extends ConsumerWidget {
 
             // Time-domain metrics
             Text(
-              'Domínio do Tempo',
+              l10n.timeDomain,
               style: Theme.of(context)
                   .textTheme
                   .titleMedium
@@ -122,7 +122,7 @@ class ResultsScreen extends ConsumerWidget {
 
             // Poincaré plot
             Text(
-              'Diagrama de Poincaré',
+              l10n.poincarePlot,
               style: Theme.of(context)
                   .textTheme
                   .titleMedium
@@ -158,7 +158,7 @@ class ResultsScreen extends ConsumerWidget {
 
             // Frequency domain
             Text(
-              'Domínio da Frequência',
+              l10n.frequencyDomain,
               style: Theme.of(context)
                   .textTheme
                   .titleMedium

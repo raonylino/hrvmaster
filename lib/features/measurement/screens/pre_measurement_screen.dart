@@ -40,7 +40,7 @@ class _PreMeasurementScreenState
             _MethodCard(
               icon: Icons.camera_alt,
               label: l10n.camera,
-              subtitle: 'PPG via câmera traseira',
+              subtitle: l10n.cameraSubtitle,
               selected: _selectedMethod == 'camera',
               onTap: () => setState(() => _selectedMethod = 'camera'),
             ),
@@ -48,7 +48,7 @@ class _PreMeasurementScreenState
             _MethodCard(
               icon: Icons.bluetooth,
               label: l10n.bluetooth,
-              subtitle: 'Polar, Garmin ou outro dispositivo BLE',
+              subtitle: l10n.bluetoothSubtitle,
               selected: _selectedMethod == 'bluetooth',
               onTap: () => setState(() => _selectedMethod = 'bluetooth'),
             ),

@@ -48,7 +48,7 @@ class MeasurementDetailScreen extends ConsumerWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'Métricas HRV',
+              l10n.hrvMetrics,
               style: Theme.of(context)
                   .textTheme
                   .titleMedium
@@ -97,7 +97,7 @@ class MeasurementDetailScreen extends ConsumerWidget {
             const SizedBox(height: 16),
             if (m.rrIntervals.isNotEmpty) ...[
               Text(
-                'Diagrama de Poincaré',
+                l10n.poincarePlot,
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium
@@ -119,7 +119,7 @@ class MeasurementDetailScreen extends ConsumerWidget {
               ),
               const SizedBox(height: 16),
               Text(
-                'Domínio da Frequência',
+                l10n.frequencyDomain,
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium

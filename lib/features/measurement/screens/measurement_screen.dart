@@ -92,7 +92,7 @@ class _MeasurementScreenState extends ConsumerState<MeasurementScreen> {
               ),
               const SizedBox(height: 8),
               Text(
-                'RR intervals: ${measureState.rrIntervals.length}',
+                l10n.rrCount(measureState.rrIntervals.length),
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: AppColors.textMuted,
                     ),
@@ -100,18 +100,18 @@ class _MeasurementScreenState extends ConsumerState<MeasurementScreen> {
               const SizedBox(height: 8),
               Text(
                 widget.method == 'camera'
-                    ? 'Coloque o dedo na câmera traseira'
-                    : 'Medindo via Bluetooth...',
+                    ? l10n.placeFingerOnCamera
+                    : l10n.measuringBluetooth,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               const SizedBox(height: 48),
               if (measureState.status == MeasurementStatus.processing)
-                const Column(
+                Column(
                   children: [
-                    CircularProgressIndicator(),
-                    SizedBox(height: 16),
-                    Text('Calculando métricas HRV...'),
+                    const CircularProgressIndicator(),
+                    const SizedBox(height: 16),
+                    Text(l10n.calculatingHrv),
                   ],
                 )
               else
@@ -122,7 +122,7 @@ class _MeasurementScreenState extends ConsumerState<MeasurementScreen> {
                           .stopAndProcess(method: widget.method)
                       : null,
                   icon: const Icon(Icons.stop),
-                  label: const Text('Finalizar Medição'),
+                  label: Text(l10n.finishMeasurement),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
                         vertical: 16, horizontal: 32),
@@ -132,7 +132,7 @@ class _MeasurementScreenState extends ConsumerState<MeasurementScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: Text(
-                    'Aguarde pelo menos 10 intervalos RR (${measureState.rrIntervals.length}/10)',
+                    l10n.waitForRrIntervals(measureState.rrIntervals.length),
                     style: const TextStyle(
                         color: AppColors.textMuted, fontSize: 12),
                     textAlign: TextAlign.center,

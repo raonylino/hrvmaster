@@ -63,9 +63,8 @@ class HistoryScreen extends ConsumerWidget {
                         return await showDialog<bool>(
                           context: context,
                           builder: (ctx) => AlertDialog(
-                            title: const Text('Excluir'),
-                            content:
-                                const Text('Excluir esta medição?'),
+                            title: Text(l10n.deleteTitle),
+                            content: Text(l10n.deleteConfirmation),
                             actions: [
                               TextButton(
                                 onPressed: () =>

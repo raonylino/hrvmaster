@@ -49,7 +49,7 @@ class HomeScreen extends ConsumerWidget {
                   children: [
                     authState.when(
                       data: (user) => Text(
-                        'Olá, ${user?.name ?? ''}',
+                        l10n.greeting(user?.name ?? ''),
                         style: Theme.of(context)
                             .textTheme
                             .titleLarge
@@ -79,7 +79,7 @@ class HomeScreen extends ConsumerWidget {
                         TextButton(
                           onPressed: () => Navigator.pushNamed(
                               context, AppRoutes.history),
-                          child: const Text('Ver todos'),
+                          child: Text(l10n.viewAll),
                         ),
                       ],
                     ),
